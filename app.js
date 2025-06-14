@@ -42,7 +42,7 @@ app.use('/', blogRoute);
 
 //renders home page
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('blog');
   });
 // renders the login page
 app.get('/login', (req, res) => {
