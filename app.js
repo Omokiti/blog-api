@@ -61,5 +61,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(Port,()=>{
-    console.log(`Server is listening in ${Port}`)
+    console.log(`Server is listening on ${Port}`)
 })
