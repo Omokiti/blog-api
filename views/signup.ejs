@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/auth.css">
+    <title>Signup Page</title>
+  </head>
+  <body>
+    <form action="/signup" method="post">
+      <!-- user input-->
+      <p>First Name</p>
+      <input type="text" name="first_name" placeholder="FirstName" required />     
+      <br /><br />
+      <p>Last Name</p>
+      <input type="text" name="last_name" placeholder="LastName" required />     
+      <br/><br/>
+      <p>Email</p>
+      <input type="text" name="email" placeholder="Email" required />     
+      <br/><br/>
+      <p>Password</p>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        required
+      /><br /><br />
+      <!-- submit button -->
+      <button type="submit">Signup</button> 
+      <span> If alreday signup please login</span><a href="/login">Login</a>
+    </form>
+  </body>
+</html>
+

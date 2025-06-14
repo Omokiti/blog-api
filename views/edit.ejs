@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Post</title>
+  <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+  <div class="post-container"> 
+  <h1>Edit Post</h1>
+
+   <form action="/userposts/<%= post._id %>?_method=PUT" method="POST">
+    <div class="post-title"> <input type="text" name="title" value="<%= post.title %>" required><br></div>
+   <div class="post-body">  <textarea name="body" required><%= post.body %></textarea><br></div>
+   <div class="post-body">  <input type="text" name="description" value="<%= post.description %>"><br></div>
+   <div class="post-meta">  <input type="text" name="tags" value="<%= post.tags.join(', ') %>"><br></div>
+    <button class="button"   type="submit">Update Post</button>
+  </form>
+
+  <!-- <form action="/userposts/<%= post._id %>" method="PUT">
+    <input type="text" name="title" value="<%= post.title %>" required><br>
+    <textarea name="body" required><%= post.body %></textarea><br>
+    <input type="text" name="description" value="<%= post.description %>"><br>
+    <input type="text" name="tags" value="<%= post.tags.join(', ') %>"><br>
+    <button type="submit">Update Post</button>
+  </form>  -->
+
+  <p><a href="/userposts">Back to Posts</a></p>
+</div>
+</body>
+</html>
+
