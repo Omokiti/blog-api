@@ -8,6 +8,9 @@ const{calculateReadingTime} = require('../readingtime')
 const createPost = async(req,res)=>{
 
     const {title,body,description,tags} =req.body
+    const tagsArray = req.body.tags
+  ? req.body.tags.split(',').map(tag => tag.trim())
+  : [];
 
     try{
         const post= await Blog.create({
@@ -15,7 +18,7 @@ const createPost = async(req,res)=>{
             body,
             description,
             author:req.user._id,
-            tags,
+            tags:tagsArray,
             reading_time:calculateReadingTime(body)
         })
         
@@ -174,7 +177,7 @@ const updatePost = async(req,res)=>{
      post.title = title,
      post.body = body,
      post.description = description,
-     post.tags = tags.split('').map(tag=>tag.trim()),
+     post.tags = tags.split(',').map(tag => tag.trim());
      post.reading_time= calculateReadingTime(body)
 
      await post.save();
